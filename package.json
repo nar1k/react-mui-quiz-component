@@ -19,23 +19,33 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "postinstall": "patch-package"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@material-ui/icons": "^4.9.1",
+    "git": "^0.1.5",
+    "material-ui-image": "https://github.com/nar1k/material-ui-image/archive/3.2.3.tar.gz"
+  },
   "peerDependencies": {
+    "@material-ui/core": "^4.8.2",
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
+    "@material-ui/core": "^4.8.2",
     "@svgr/rollup": "^2.4.1",
     "@types/jest": "^23.1.5",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "babel-core": "^6.26.3",
+    "babel-plugin-root-import": "^6.4.1",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
     "gh-pages": "^1.2.0",
+    "patch-package": "^6.2.0",
+    "postinstall-postinstall": "^2.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",
@@ -47,7 +57,7 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.17.0",
     "rollup-plugin-url": "^1.4.0",
-    "typescript": "^2.8.3"
+    "typescript": "3"
   },
   "files": [
     "dist"

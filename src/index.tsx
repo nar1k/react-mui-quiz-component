@@ -1,23 +1,33 @@
 /**
- * @class ExampleComponent
+ * @class QuizComponent
  */
 
 import * as React from 'react'
+import { withStyles } from '@material-ui/styles';
+import QuestionComponent from './components/question'
 
-import styles from './styles.css'
+type Props = {
+  classes?: any,
+}
 
-export type Props = { text: string }
+const styles = () => ({
+  root: {
+    width: '100%',
+  },
+});
 
-export default class ExampleComponent extends React.Component<Props> {
+class QuizComponent extends React.Component<Props> {
   render() {
     const {
-      text
+      classes
     } = this.props
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
+      <div className={classes.root}>
       </div>
     )
   }
 }
+
+export { QuestionComponent};
+export default withStyles(styles)(QuizComponent);
