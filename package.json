@@ -19,13 +19,13 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
-    "postinstall": "patch-package"
+    "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
     "@material-ui/icons": "^4.9.1",
     "git": "^0.1.5",
-    "material-ui-image": "https://github.com/nar1k/material-ui-image/archive/3.2.3.tar.gz"
+    "material-ui-image": "3.2.2",
+    "react-aspect-ratio": "^1.0.41"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.8.2",
@@ -44,8 +44,6 @@
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
     "gh-pages": "^1.2.0",
-    "patch-package": "^6.2.0",
-    "postinstall-postinstall": "^2.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",

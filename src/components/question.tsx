@@ -106,9 +106,7 @@ class QuestionComponent extends React.Component<Props, State> {
   }
 
   onOptionClick = (event:React.MouseEvent<HTMLDivElement>) => {
-    console.log("event - " + event.target);
-    let current = event.target as HTMLImageElement;
-    console.log(`clicked on id ${current.id}`)
+    let current = event.currentTarget as HTMLDivElement;
     this.setState({
       selected: current.id
     })
@@ -124,8 +122,8 @@ class QuestionComponent extends React.Component<Props, State> {
     data.answers.map((answer) => {
       answers.push(<Grid item xs={3}>
 
-        <Paper className={classes.paper} onClick={this.onOptionClick}>
-          <Image id={answer.id} src={answer.image ? answer.image : ""} aspectRatio={(3/4)}/>
+        <Paper id={answer.id} className={classes.paper} onClick={this.onOptionClick}>
+          <Image  src={answer.image ? answer.image : ""} aspectRatio={(3/4)}/>
           { answer.id == this.state.selected && <div className={classes.selected }/> }
         </Paper>
       </Grid>)
