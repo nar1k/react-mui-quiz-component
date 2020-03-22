@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles';
-import { QuestionComponent } from 'react-mui-quiz-component'
+import { QTAIComponent } from 'react-mui-quiz-component'
+import { QTATComponent } from 'react-mui-quiz-component'
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 
 const styles = () => ({
@@ -45,7 +46,10 @@ class App extends Component {
     return (
         <Grid container className={classes.root} spacing={0}>
           <Grid item xs={12}>
-            <QuestionComponent data = {qd} onSubmit={this.onSubmit}/>
+            <QTATComponent data = {qd} onSubmit={this.onSubmit}/>
+          </Grid>
+          <Grid item xs={12}>
+            <QTAIComponent data = {qd} onSubmit={this.onSubmit}/>
           </Grid>
         </Grid>
     )

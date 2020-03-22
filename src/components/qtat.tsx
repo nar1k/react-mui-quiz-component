@@ -1,32 +1,11 @@
-/**
- * @class QuestionComponent
- */
-
 import * as React from 'react'
 import Typography from '@material-ui/core/Typography';
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Image from 'material-ui-image'
 import green from '@material-ui/core/colors/green';
-
-export type QuestionData = {
-  id: string,
-  type: string,
-  title?: string,
-  question?: string,
-  image?: string,
-  audio?: string,
-  answers: Answer[],
-  correctAnswers: string[]
-}
-
-export type Answer = {
-  id: string,
-  image?: string,
-  title?: string
-}
+import { QuestionData, AnswerData } from '../types'
 
 export type Props = { 
   data: QuestionData,
@@ -48,36 +27,35 @@ const styles = (theme: Theme) => createStyles({
     color: theme.palette.text.secondary,
     position: 'relative' as 'relative',
     cursor: 'pointer' as 'pointer',
-},
-  selected: {
-    background: green[200],
-    height: '100%',
-    width: '100%',
-    opacity: '0.2',
-    top: 0,
-    left: 0,
-    position: 'absolute' as 'absolute',
-    padding: 0,
-    transition: 'opacity .5s',
+  },
+  answerSelected: {
+    minHeight: '90px',
+    backgroundColor: green[500],
   },
   title: {
     textAlign: 'center' as 'center',
-    margin: theme.spacing(3,3,3,3),
+    margin: theme.spacing(1,3,1,3),
   },
   question: {
-    padding: theme.spacing(3,3,3,3) ,
+    padding: theme.spacing(1,3,1,3) ,
   },
   answers: {
-    padding: theme.spacing(3,3,3,3),
+    padding: theme.spacing(2,3,2,3),
+  },
+  answer: {
+    minHeight: '90px',
+    "&:hover": {
+      backgroundColor: green[500]
+    }
   },
   submit: {
-    padding: theme.spacing(3,3,3,3),
+    padding: theme.spacing(1,1,1,1),
     alignItems: 'center' as 'center',
     justifyContent: 'center' as 'center',
   },
 });
 
-class QuestionComponent extends React.Component<Props, State> {
+class QTATComponent extends React.Component<Props, State> {
   constructor(props: Props){
     super(props)
     this.state = {
@@ -98,18 +76,19 @@ class QuestionComponent extends React.Component<Props, State> {
   }
   
   onSubmit = () => {
-    console.log("in submit")
     if(this.props.onSubmit){
       const correct = this.state.selected == this.props.data.correctAnswers[0]
       this.props.onSubmit(correct)
     }
   }
 
-  onOptionClick = (event:React.MouseEvent<HTMLDivElement>) => {
-    let current = event.currentTarget as HTMLDivElement;
+  onOptionClick = (event:React.MouseEvent<HTMLButtonElement>) => {
+    let current = event.currentTarget ;
     this.setState({
       selected: current.id
     })
+
+    this.onSubmit()
   }
 
   renderAnswers(){
@@ -119,13 +98,9 @@ class QuestionComponent extends React.Component<Props, State> {
     } = this.props
 
     let answers: JSX.Element[] = []
-    data.answers.map((answer) => {
+    data.answers.map((answer: AnswerData) => {
       answers.push(<Grid item xs={3}>
-
-        <Paper id={answer.id} className={classes.paper} onClick={this.onOptionClick}>
-          <Image  src={answer.image ? answer.image : ""} aspectRatio={(3/4)}/>
-          { answer.id == this.state.selected && <div className={classes.selected }/> }
-        </Paper>
+        <Button id={answer.id} onClick={this.onOptionClick} fullWidth className={this.state.selected === answer.id ? classes.answerSelected : classes.answer} variant="contained" disableFocusRipple  disableRipple>{answer.title}</Button>
       </Grid>)
     })
     return answers
@@ -149,17 +124,10 @@ class QuestionComponent extends React.Component<Props, State> {
         <Grid container spacing={3} className={classes.answers}>
           {this.renderAnswers()}
         </Grid>
-        <Grid container spacing={3} className={classes.submit}>
-          <Grid item >
-            <Button size="large" variant="contained" color="primary" onClick={this.onSubmit}>
-              Submit
-            </Button>
-          </Grid>
-        </Grid>
 
       </div>
     )
   }
 }
 
-export default withStyles(styles)(QuestionComponent);
+export default withStyles(styles)(QTATComponent);
