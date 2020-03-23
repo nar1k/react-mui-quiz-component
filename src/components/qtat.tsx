@@ -21,29 +21,25 @@ const styles = (theme: Theme) => createStyles({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    position: 'relative' as 'relative',
-    cursor: 'pointer' as 'pointer',
+  container: {
+    padding: theme.spacing(0),
   },
   answerSelected: {
-    minHeight: '90px',
+    minHeight: '100px',
+    margin: theme.spacing(3,0,3,0),
+    padding: theme.spacing(3,0,3,0),
     backgroundColor: green[500],
   },
   title: {
     textAlign: 'center' as 'center',
-    margin: theme.spacing(1,3,1,3),
   },
   question: {
-    padding: theme.spacing(1,3,1,3) ,
-  },
-  answers: {
-    padding: theme.spacing(2,3,2,3),
+    padding: theme.spacing(3) ,
   },
   answer: {
-    minHeight: '90px',
+    minHeight: '100px',
+    margin: theme.spacing(3,0,3,0),
+    padding: theme.spacing(3,0,3,0),
     "&:hover": {
       backgroundColor: green[500]
     }
@@ -85,10 +81,8 @@ class QTATComponent extends React.Component<Props, State> {
   onOptionClick = (event:React.MouseEvent<HTMLButtonElement>) => {
     let current = event.currentTarget ;
     this.setState({
-      selected: current.id
-    })
-
-    this.onSubmit()
+      selected: current.id,
+    }, this.onSubmit)
   }
 
   renderAnswers(){
@@ -115,13 +109,15 @@ class QTATComponent extends React.Component<Props, State> {
     return (
       <div className={classes.root}>
         { this.renderQuestionTitle()}
-        <Paper className={classes.question} elevation={3}>
-          <Typography variant="h3" gutterBottom className={classes.title}>
-            { data.question }
-          </Typography>
-        </Paper>
 
-        <Grid container spacing={3} className={classes.answers}>
+        <Grid container spacing={3} className={classes.container}>
+          <Grid item xs={12}>
+            <Paper className={classes.question} elevation={3}>
+              <Typography variant="h3" gutterBottom className={classes.title}>
+                { data.question }
+              </Typography>
+            </Paper>
+          </Grid>
           {this.renderAnswers()}
         </Grid>
 

@@ -21,8 +21,9 @@ const styles = (theme: Theme) => createStyles({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing(2),
+  answer: {
+    padding: theme.spacing(1),
+    margin: theme.spacing(3,0,0,0),
     textAlign: 'center',
     color: theme.palette.text.secondary,
     position: 'relative' as 'relative',
@@ -41,18 +42,12 @@ const styles = (theme: Theme) => createStyles({
   },
   title: {
     textAlign: 'center' as 'center',
-    margin: theme.spacing(1,3,1,3),
   },
   question: {
-    padding: theme.spacing(1,3,1,3) ,
+    padding: theme.spacing(3) ,
   },
-  answers: {
-    padding: theme.spacing(2,3,2,3),
-  },
-  submit: {
-    padding: theme.spacing(1,1,1,1),
-    alignItems: 'center' as 'center',
-    justifyContent: 'center' as 'center',
+  container: {
+    margin: theme.spacing(0),
   },
 });
 
@@ -87,9 +82,8 @@ class QTAIComponent extends React.Component<Props, State> {
     let current = event.currentTarget as HTMLDivElement;
     this.setState({
       selected: current.id
-    })
+    }, this.onSubmit)
 
-    this.onSubmit()
   }
 
   renderAnswers(){
@@ -102,7 +96,7 @@ class QTAIComponent extends React.Component<Props, State> {
     data.answers.map((answer:AnswerData) => {
       answers.push(<Grid item xs={3}>
 
-        <Paper id={answer.id} className={classes.paper} onClick={this.onOptionClick}>
+        <Paper id={answer.id} className={classes.answer} onClick={this.onOptionClick}>
           <Image  src={answer.image ? answer.image : ""} aspectRatio={(3/4)}/>
           { answer.id == this.state.selected && <div className={classes.selected }/> }
         </Paper>
@@ -120,13 +114,15 @@ class QTAIComponent extends React.Component<Props, State> {
     return (
       <div className={classes.root}>
         { this.renderQuestionTitle()}
-        <Paper className={classes.question} elevation={3}>
-          <Typography variant="h3" gutterBottom className={classes.title}>
-            { data.question }
-          </Typography>
-        </Paper>
 
-        <Grid container spacing={3} className={classes.answers}>
+        <Grid container spacing={3} className={classes.container1}>
+          <Grid item xs={12}>
+            <Paper className={classes.question} elevation={3}>
+              <Typography variant="h3" gutterBottom className={classes.title}>
+                { data.question }
+              </Typography>
+            </Paper>
+          </Grid>
           {this.renderAnswers()}
         </Grid>
       </div>
