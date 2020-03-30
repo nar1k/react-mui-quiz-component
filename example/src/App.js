@@ -14,7 +14,7 @@ const qd = {
   id: "1",
   type: "qtat",
   title: "What kind of sentence is this?",
-  text: "Sabrina is completely soaked!",
+  text: "<u>&nbsp;&nbsp;&nbsp;</u> is completely soaked!",
   answers: [{
       id: "1",
       text: "Exclamatory",

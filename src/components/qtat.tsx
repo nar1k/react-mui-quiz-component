@@ -105,6 +105,10 @@ class QTATComponent extends React.Component<Props, State> {
     return answers
   }
 
+  createMarkup(text: any){
+    return {__html: text}
+  }
+
   render() {
     const {
       classes,
@@ -118,7 +122,7 @@ class QTATComponent extends React.Component<Props, State> {
             <Paper className={classes.question} elevation={3}>
               { this.renderQuestionTitle()}
               <Typography variant="h3" gutterBottom className={classes.title}>
-                { data.text }
+                <div dangerouslySetInnerHTML={this.createMarkup(data.text)} />
               </Typography>
             </Paper>
           </Grid>
