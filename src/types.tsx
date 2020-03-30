@@ -2,15 +2,15 @@ export type QuestionData = {
   id: string,
   type: string,
   title?: string,
-  question?: string,
+  text?: string,
   image?: string,
   audio?: string,
-  answers: AnswerData[],
-  correctAnswers: string[]
+  answers: AnswerData[]
 }
 
 export type AnswerData = {
   id: string,
   image?: string,
-  title?: string
+  text?: string,
+  correct: boolean
 }

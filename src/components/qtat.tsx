@@ -31,7 +31,6 @@ const styles = (theme: Theme) => createStyles({
     backgroundColor: green[500],
   },
   title: {
-    textAlign: 'center' as 'center',
   },
   question: {
     padding: theme.spacing(3) ,
@@ -61,9 +60,9 @@ class QTATComponent extends React.Component<Props, State> {
 
   renderQuestionTitle(){
     const { classes, data } = this.props
-    if (data.type == "text"){
+    if (data.title && data.title.length > 0){
       return (
-        <Typography variant="h6" gutterBottom className={classes.title}>
+        <Typography variant="body1" gutterBottom className={classes.title}>
           { data.title }
         </Typography>
       )
@@ -73,8 +72,13 @@ class QTATComponent extends React.Component<Props, State> {
   
   onSubmit = () => {
     if(this.props.onSubmit){
-      const correct = this.state.selected == this.props.data.correctAnswers[0]
-      this.props.onSubmit(correct)
+      const answers = this.props.data.answers
+      for(let i = 0; i < answers.length; i++) {
+        if(answers[i].id == this.state.selected){
+          this.props.onSubmit(answers[i].correct == true)
+          return
+        }
+      }
     }
   }
 
@@ -94,7 +98,7 @@ class QTATComponent extends React.Component<Props, State> {
     let answers: JSX.Element[] = []
     data.answers.map((answer: AnswerData) => {
       answers.push(<Grid item xs={3}>
-        <Button id={answer.id} onClick={this.onOptionClick} fullWidth className={this.state.selected === answer.id ? classes.answerSelected : classes.answer} variant="contained" disableFocusRipple  disableRipple>{answer.title}</Button>
+        <Button id={answer.id} onClick={this.onOptionClick} fullWidth className={this.state.selected === answer.id ? classes.answerSelected : classes.answer} variant="contained" disableFocusRipple  disableRipple>{answer.text}</Button>
       </Grid>)
     })
     return answers
@@ -108,13 +112,12 @@ class QTATComponent extends React.Component<Props, State> {
 
     return (
       <div className={classes.root}>
-        { this.renderQuestionTitle()}
-
         <Grid container spacing={3} className={classes.container}>
           <Grid item xs={12}>
             <Paper className={classes.question} elevation={3}>
+              { this.renderQuestionTitle()}
               <Typography variant="h3" gutterBottom className={classes.title}>
-                { data.question }
+                { data.text }
               </Typography>
             </Paper>
           </Grid>

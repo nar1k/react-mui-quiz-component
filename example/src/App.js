@@ -12,28 +12,31 @@ const styles = () => ({
 
 const qd = {
   id: "1",
-  qType: "text",
-  title: "Which book is this quote from?",
-  question: "Adding manpower to a late software project, makes it later.",
+  type: "qtat",
+  title: "What kind of sentence is this?",
+  text: "Sabrina is completely soaked!",
   answers: [{
       id: "1",
-      title: "Mythical Man Month",
-      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg"
+      text: "Exclamatory",
+      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
+      correct: true
     },{
       id: "2",
-      title: "Code Complete",
-      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg"
+      text: "Interrogative",
+      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
+      correct: false
     },{
       id: "3",
-      title: "Pragmatic Programmer",
-      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg"
+      text: "Imperative",
+      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
+      correct: false
     },{
       id: "4",
-      title: "Clean Code",
-      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg"
+      text: "Declarative",
+      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
+      correct: false
     }
-  ],
-  correctAnswers: ["1"]
+  ]
 }
 
 class App extends Component {
