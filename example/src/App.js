@@ -22,17 +22,7 @@ const qd = {
       correct: true
     },{
       id: "2",
-      text: "Interrogative",
-      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
-      correct: false
-    },{
-      id: "3",
-      text: "Imperative",
-      image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
-      correct: false
-    },{
-      id: "4",
-      text: "Declarative",
+      text: "False",
       image: "https://images-na.ssl-images-amazon.com/images/I/51J1VwsSv1L._SX334_BO1,204,203,200_.jpg",
       correct: false
     }

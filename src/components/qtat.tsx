@@ -96,8 +96,9 @@ class QTATComponent extends React.Component<Props, State> {
     } = this.props
 
     let answers: JSX.Element[] = []
+    const spacing = data.answers.length >= 4 ? 3 : 6
     data.answers.map((answer: AnswerData) => {
-      answers.push(<Grid item xs={3}>
+      answers.push(<Grid item xs={spacing}>
         <Button id={answer.id} onClick={this.onOptionClick} fullWidth className={this.state.selected === answer.id ? classes.answerSelected : classes.answer} variant="contained" disableFocusRipple  disableRipple>{answer.text}</Button>
       </Grid>)
     })
