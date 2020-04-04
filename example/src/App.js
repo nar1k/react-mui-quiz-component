@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import { QTAIComponent } from 'react-mui-quiz-component'
 import { QTATComponent } from 'react-mui-quiz-component'
+import { QTSATComponent } from 'react-mui-quiz-component'
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 
 const styles = () => ({
@@ -29,6 +30,35 @@ const qd = {
   ]
 }
 
+const qds = {
+  id: "1",
+  type: "qtsat",
+  title: "Find the missing number",
+  text: "AAA,BBB,?,DDD,EEE",
+  answers: [{
+      id: "1",
+      text: "CCC",
+      image: "",
+      correct: true
+    },{
+      id: "2",
+      text: "FFF",
+      image: "",
+      correct: false
+    },{
+      id: "3",
+      text: "GGG",
+      image: "",
+      correct: false
+    },{
+      id: "4",
+      text: "HHH",
+      image: "",
+      correct: false
+    }
+  ]
+}
+
 class App extends Component {
   onSubmit = () => {
     console.log("in main submit")
@@ -38,6 +68,9 @@ class App extends Component {
     const { classes } = this.props
     return (
         <Grid container className={classes.root} spacing={0}>
+          <Grid item xs={12}>
+            <QTSATComponent data = {qds} onSubmit={this.onSubmit}/>
+          </Grid>
           <Grid item xs={12}>
             <QTATComponent data = {qd} onSubmit={this.onSubmit}/>
           </Grid>

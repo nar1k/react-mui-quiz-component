@@ -6,6 +6,7 @@ import * as React from 'react'
 import { withStyles } from '@material-ui/styles';
 import QTAIComponent from './components/qtai'
 import QTATComponent from './components/qtat'
+import QTSATComponent from './components/qtsat'
 
 type Props = {
   classes?: any,
@@ -30,5 +31,5 @@ class QuizComponent extends React.Component<Props> {
   }
 }
 
-export { QTAIComponent, QTATComponent };
+export { QTAIComponent, QTATComponent, QTSATComponent };
 export default withStyles(styles)(QuizComponent);
