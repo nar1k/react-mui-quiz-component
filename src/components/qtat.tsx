@@ -9,6 +9,7 @@ import { QuestionData, AnswerData } from '../types'
 
 export type Props = { 
   data: QuestionData,
+  centered: string,
   classes?: any,
   onSubmit?: (correct: boolean) => void,
 }
@@ -30,7 +31,8 @@ const styles = (theme: Theme) => createStyles({
     padding: theme.spacing(3,0,3,0),
     backgroundColor: green[500],
   },
-  title: {
+  textCentered: {
+    textAlign: 'center' as 'center'
   },
   question: {
     padding: theme.spacing(3) ,
@@ -112,7 +114,8 @@ class QTATComponent extends React.Component<Props, State> {
   render() {
     const {
       classes,
-      data
+      data,
+      centered
     } = this.props
 
     return (
@@ -121,8 +124,8 @@ class QTATComponent extends React.Component<Props, State> {
           <Grid item xs={12}>
             <Paper className={classes.question} elevation={3}>
               { this.renderQuestionTitle()}
-              <Typography variant="h3" gutterBottom className={classes.title}>
-                <div dangerouslySetInnerHTML={this.createMarkup(data.text)} />
+              <Typography variant="h3" gutterBottom >
+                <div dangerouslySetInnerHTML={this.createMarkup(data.text)} className={centered ? classes.textCentered: "na"} />
               </Typography>
             </Paper>
           </Grid>
