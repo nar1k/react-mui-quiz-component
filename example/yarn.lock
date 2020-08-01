@@ -1298,9 +1298,9 @@ bluebird@^3.4.7:
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
-  version "4.11.8"
-  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
-  integrity sha512-ItfYfPLkWHUjckQCk8xC+LwxgK8NYcXywGigJgSwOP8Y2iyWT4f2vsZnoOXTTbo+o5yXmIUJ4gn5538SO5S3gA==
+  version "4.11.9"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.9.tgz#26d556829458f9d1e81fc48952493d0ba3507828"
+  integrity sha512-E6QoYqCKZfgatHTdHzs1RRKP7ip4vvm+EyRUeE2RF0NblwVvb0p6jSVeNTOFxPn26QXN2o6SMfNxKp6kU8zQaw==
 
 body-parser@1.19.0:
   version "1.19.0"
@@ -2545,9 +2545,9 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   integrity sha512-f8nx53+Z9Y+SPWGg3YdHrbYYfIJAtbUjpFfW4X1RwTZ94iUG7geg9tV8HqzAXX7XTNgyWgAFvce4yce8ZKxKmg==
 
 elliptic@^6.0.0:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
-  integrity sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
+  integrity sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -5133,9 +5133,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-"material-ui-image@git+https://git@github.com/nar1k/material-ui-image.git":
-  version "3.2.3"
-  resolved "git+https://git@github.com/nar1k/material-ui-image.git#a314abc10d7d365a0a7f47166cbced2ab6cbb8e0"
+material-ui-image@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/material-ui-image/-/material-ui-image-3.2.2.tgz#bdc9d760c6ad3c7aba4a51ae39246f6e5ad67e73"
+  integrity sha512-2CdBG0rOYqEC2oyc6owdReEfU5jdYAuEIUvY2J2QU16q2OFIwB3ElPm/ZCDzzSjzeJ1T6nFPyNurjyJridDaew==
   dependencies:
     prop-types "^15.5.8"
 
@@ -6344,7 +6345,7 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6504,6 +6505,11 @@ react-app-rewired@^2.1.5:
   dependencies:
     semver "^5.6.0"
 
+react-aspect-ratio@^1.0.41:
+  version "1.0.42"
+  resolved "https://registry.yarnpkg.com/react-aspect-ratio/-/react-aspect-ratio-1.0.42.tgz#04bf3e4d11c484bc5638ef5b22b84fb428ebc809"
+  integrity sha512-TlDS7GZ6Fot6yMo1OYWrcxI/cggGsU4xsfXLastv6FfcZq0e99LeMq+OUbrlEjtOzi00QzNvkoj5T2vDqJNAmw==
+
 react-dev-utils@^5.0.2:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.3.tgz#92f97668f03deb09d7fa11ea288832a8c756e35e"
@@ -6549,8 +6555,12 @@ react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1:
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
 "react-mui-quiz-component@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.0"
+  dependencies:
+    "@material-ui/icons" "^4.9.1"
+    git "^0.1.5"
+    material-ui-image "3.2.2"
+    react-aspect-ratio "^1.0.41"
 
 react-scripts@^1.1.4:
   version "1.1.5"
