@@ -5133,9 +5133,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-"material-ui-image@git+https://git@github.com/nar1k/material-ui-image.git":
-  version "3.2.3"
-  resolved "git+https://git@github.com/nar1k/material-ui-image.git#a314abc10d7d365a0a7f47166cbced2ab6cbb8e0"
+material-ui-image@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/material-ui-image/-/material-ui-image-3.2.2.tgz#bdc9d760c6ad3c7aba4a51ae39246f6e5ad67e73"
+  integrity sha512-2CdBG0rOYqEC2oyc6owdReEfU5jdYAuEIUvY2J2QU16q2OFIwB3ElPm/ZCDzzSjzeJ1T6nFPyNurjyJridDaew==
   dependencies:
     prop-types "^15.5.8"
 
@@ -6344,7 +6345,7 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6504,6 +6505,11 @@ react-app-rewired@^2.1.5:
   dependencies:
     semver "^5.6.0"
 
+react-aspect-ratio@^1.0.41:
+  version "1.0.50"
+  resolved "https://registry.yarnpkg.com/react-aspect-ratio/-/react-aspect-ratio-1.0.50.tgz#b46bfc6a701d829bd0cb6d001cf271e443874213"
+  integrity sha512-AEAPqmPMLlcuhp4t3z6crb+gGckc0lFPYNL/654a6rrcblcvZGtgh+VpcUbC7AwIE+MT8u5uGeJ7shx0hUOKSw==
+
 react-dev-utils@^5.0.2:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.3.tgz#92f97668f03deb09d7fa11ea288832a8c756e35e"
@@ -6549,8 +6555,12 @@ react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1:
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
 "react-mui-quiz-component@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.0"
+  dependencies:
+    "@material-ui/icons" "^4.9.1"
+    git "^0.1.5"
+    material-ui-image "3.2.2"
+    react-aspect-ratio "^1.0.41"
 
 react-scripts@^1.1.4:
   version "1.1.5"
@@ -7943,9 +7953,9 @@ uri-js@^4.2.2:
     punycode "^2.1.0"
 
 urijs@^1.16.1:
-  version "1.19.2"
-  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.2.tgz#f9be09f00c4c5134b7cb3cf475c1dd394526265a"
-  integrity sha512-s/UIq9ap4JPZ7H1EB5ULo/aOUbWqfDi7FKzMC2Nz+0Si8GiT1rIEaprt8hy3Vy2Ex2aJPpOQv4P4DuOZ+K1c6w==
+  version "1.19.10"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.10.tgz#8e2fe70a8192845c180f75074884278f1eea26cb"
+  integrity sha512-EzauQlgKuJgsXOqoMrCiePBf4At5jVqRhXykF3Wfb8ZsOBMxPcfiVBcsHXug4Aepb/ICm2PIgqAUGMelgdrWEg==
 
 urix@^0.1.0:
   version "0.1.0"
