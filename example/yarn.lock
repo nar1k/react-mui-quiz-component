@@ -5133,9 +5133,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-"material-ui-image@git+https://git@github.com/nar1k/material-ui-image.git":
-  version "3.2.3"
-  resolved "git+https://git@github.com/nar1k/material-ui-image.git#a314abc10d7d365a0a7f47166cbced2ab6cbb8e0"
+material-ui-image@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/material-ui-image/-/material-ui-image-3.2.2.tgz#bdc9d760c6ad3c7aba4a51ae39246f6e5ad67e73"
+  integrity sha512-2CdBG0rOYqEC2oyc6owdReEfU5jdYAuEIUvY2J2QU16q2OFIwB3ElPm/ZCDzzSjzeJ1T6nFPyNurjyJridDaew==
   dependencies:
     prop-types "^15.5.8"
 
@@ -6344,7 +6345,7 @@ promise@8.0.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6414,9 +6415,9 @@ qs@6.7.0:
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 query-string@^4.1.0:
   version "4.3.4"
@@ -6504,6 +6505,11 @@ react-app-rewired@^2.1.5:
   dependencies:
     semver "^5.6.0"
 
+react-aspect-ratio@^1.0.41:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-aspect-ratio/-/react-aspect-ratio-1.1.2.tgz#a65c7ba9862dc31fcd7b6ac33f1c70beb53b8bad"
+  integrity sha512-76dAnSGn00jV2uOVOr2CPgAIgMyRv272qXwQ3JRR6Mt1qkeKSCax9nE19lx3tMTVgKQARHm6pXL7BcUg7cBQbw==
+
 react-dev-utils@^5.0.2:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.3.tgz#92f97668f03deb09d7fa11ea288832a8c756e35e"
@@ -6549,8 +6555,12 @@ react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1:
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
 "react-mui-quiz-component@link:..":
-  version "0.0.0"
-  uid ""
+  version "1.0.0"
+  dependencies:
+    "@material-ui/icons" "^4.9.1"
+    git "^0.1.5"
+    material-ui-image "3.2.2"
+    react-aspect-ratio "^1.0.41"
 
 react-scripts@^1.1.4:
   version "1.1.5"
